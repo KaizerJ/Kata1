@@ -1,11 +1,12 @@
 package kata1;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Kata1 {
 
     public static void main(String[] args) {
-        Person pau = new Person("Pau", new Date(80,10,1));
+        LocalDate birthdate = LocalDate.of(1980,10,1);
+        Person pau = new Person("Pau", birthdate);
         System.out.println(pau);
     }
     
