@@ -1,12 +1,12 @@
 package kata1;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Person {
     
     private final String name;
     private final LocalDate birthdate;
-    private static final double DAYS_PER_YEAR = 365.25;
 
     public Person(String name, LocalDate birthdate) {
         this.name = name;
@@ -22,8 +22,7 @@ public class Person {
     }
     
     public int getAge(){
-        long ms = LocalDate.now().toEpochDay() - birthdate.toEpochDay();
-        return (int) (ms / DAYS_PER_YEAR);
+        return Period.between(birthdate, LocalDate.now()).getYears();
     }
 
     @Override
